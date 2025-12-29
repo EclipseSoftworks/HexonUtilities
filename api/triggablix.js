@@ -31,7 +31,7 @@ export default async function handler(req, res) {
 
   const embed = {
     title: "Hexon Utilities",
-    color: 000000,
+    color: 8126685,
     fields: [
       {
         name: "Game",
