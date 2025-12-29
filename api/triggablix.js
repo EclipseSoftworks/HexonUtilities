@@ -3,7 +3,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ success: false, message: "Method Not Allowed" });
   }
 
-  const expectedApiKey = "sfdogsdkgopfdkgdspgksopgkdsgokdfsgpsdkgpofsdkgfsdgsdfgisdjgfuopisjgusoighsfdupighfsdpiughdsfgudsfhgpiushgpdiughsdpighsdpigusdhgpiufsdhgupisdhgpdghupighsdfpighsdfpgjb5e8w9jb93w";
+  const expectedApiKey = "https://discord.com/api/webhooks/1455070136200335455/QtrM3J9k0gbfe_IClyu-ZuQTtVLQBmcXC1tRYXMHrSF9JUaaLhSi2In4Oku-HVULACSu";
   const authHeader = req.headers.authorization || "";
   if (authHeader !== `Bearer ${expectedApiKey}`) {
     return res.status(401).json({ success: false, message: "Unauthorized" });
