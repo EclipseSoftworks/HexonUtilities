@@ -30,7 +30,7 @@ export default async function handler(req, res) {
   const discordWebhookUrl = "https://discord.com/api/webhooks/1455070136200335455/QtrM3J9k0gbfe_IClyu-ZuQTtVLQBmcXC1tRYXMHrSF9JUaaLhSi2In4Oku-HVULACSu";
 
   const embed = {
-    title: "Lunar Utilities",
+    title: "Hexon Utilities",
     color: 8126685,
     fields: [
       {
@@ -66,12 +66,12 @@ export default async function handler(req, res) {
       url: thumbnail || ""
     },
     author: {
-      name: "Lunar Gamelogs",
-      icon_url: "https://media.discordapp.net/attachments/1389242565588680864/1397931021244043265/lunar_9290559.png?ex=68838437&is=688232b7&hm=12fc1b7553331f4959f5ba95dc33501d20c93aa670e96d4152aa9ca3a0683eb3&=&format=webp&quality=lossless"
+      name: "Hexon Gamelogs",
+      icon_url: "https://media.discordapp.net/attachments/1449766127214268467/1454245596532834404/Hexon_Logo.png?ex=69530640&is=6951b4c0&hm=f711405a37ad91527095d9224fae747e32672873b9740e4d5e47b4b6bfe500cc&=&format=webp&quality=lossless"
     },
     footer: {
-      text: "Secured and Powered by Eclipse",
-      icon_url: "https://media.discordapp.net/attachments/1359562019212361728/1397937849348784191/LOGO-Photoroom.png?ex=68838a93&is=68823913&hm=83c53c4783529ec6f68680a8f83ee8020e6c9ec496d7302f70b94c732bfc37ff&=&format=webp&quality=lossless"
+      text: "Secured and Powered by isiah",
+      icon_url: "https://media.discordapp.net/attachments/1449766127214268467/1454245596532834404/Hexon_Logo.png?ex=69530640&is=6951b4c0&hm=f711405a37ad91527095d9224fae747e32672873b9740e4d5e47b4b6bfe500cc&=&format=webp&quality=lossless"
     },
     timestamp: new Date().toISOString()
   };
