@@ -3,7 +3,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ success: false, message: "Method Not Allowed" });
   }
 
-  const expectedApiKey = "sfdogsdkgopfdkgdspgksopgkdsgokdfs[gpsdkg[pofsdkgf[sdgsdfgisdjgfuopisjgusoighsfdupighfsdpiughdsfgudsfhgpiushgpdiughsdpighsdpigusdhgpiufsdhgupisdhgpdghupighsdfpighsdfpgjb5e8w9jb93w";
+  const expectedApiKey = "sfdogsdkgopfdkgdspgksopgkdsgokdfsgpsdkgpofsdkgfsdgsdfgisdjgfuopisjgusoighsfdupighfsdpiughdsfgudsfhgpiushgpdiughsdpighsdpigusdhgpiufsdhgupisdhgpdghupighsdfpighsdfpgjb5e8w9jb93w";
   const authHeader = req.headers.authorization || "";
   if (authHeader !== `Bearer ${expectedApiKey}`) {
     return res.status(401).json({ success: false, message: "Unauthorized" });
